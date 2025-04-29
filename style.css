@@ -104,6 +104,17 @@ body {
     transition: filter 0.3s ease;
 }
 
+/* Add overlay for better text readability */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+}
+
 #heroVideo {
     width: 100%;
     height: 100%;
@@ -116,32 +127,43 @@ body {
 .hero-content {
     max-width: 1400px;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     text-align: center;
     width: 100%;
+    z-index: 10;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text-container {
+    min-height: 80px; /* Further reduced from 100px to 80px */
+    margin-bottom: 5px; /* Further reduced from 15px to 5px to decrease spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-text {
     font-size: 64px;
     font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    line-height: 1; /* Further reduced from 1.1 to 1 to make text more compact */
+    letter-spacing: 0;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    min-height: 77px; /* Set a fixed height to prevent jumping */
+    min-height: 65px; /* Reduced from 70px */
     display: flex;
-    justify-content: center; /* Center the text */
+    justify-content: center;
     align-items: center;
 }
 
 .cursor {
     display: inline-block;
-    width: 3px;
-    height: 64px; /* Match the font size */
+    width: 4px;
+    height: 64px;
     background-color: #fff;
     margin-left: 5px;
     animation: blink 0.7s infinite;
@@ -154,13 +176,126 @@ body {
 }
 
 .hero-subtext {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 400;
-    max-width: 600px;
+    max-width: 700px;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
+    margin: 0 auto 45px; /* Increased from 25px to 45px to increase spacing before buttons */
     opacity: 0.9;
+}
+
+/* CTA Buttons */
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.primary-btn {
+    background-color: #3498db;
+    color: white;
+    border: 2px solid #3498db;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Social Icons */
+.hero-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #fff;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Responsive styles for hero section */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 42px;
+    }
+    
+    .cursor {
+        height: 42px;
+    }
+    
+    .hero-subtext {
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .primary-btn, .secondary-btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 32px;
+    }
+    
+    .cursor {
+        height: 32px;
+    }
+    
+    .hero-subtext {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-cta {
+        margin-bottom: 15px;
+    }
 }
 
 /* Scroll Button */
