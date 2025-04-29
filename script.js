@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Hero Text Animation
+    // Hero Text Animation - Updated with more professional titles
     function startHeroAnimation() {
         const heroTextContainer = document.querySelector('.hero-text');
         const words = ['Final Year Undergraduate', 'Aspiring Data Analyst', 'Tech Enthusiast'];
@@ -75,15 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start the loading animation
     typeLoadingText();
-});
-
-// Scroll
-document.querySelector('.scroll-btn a').addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({
-        behavior: 'smooth'
+    
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
