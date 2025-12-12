@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     typeLoad();
 
-    // Hero typing effect
+    // Hero typing effect (simple)
     function startHeroTyping() {
         const typedEl = document.querySelector('.typed-text');
         if (!typedEl) return;
