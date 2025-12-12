@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayank | Data & AI</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>**Mayank Verma — Full‑Stack Aspirant**</title>
+    <meta name="description"
+        content="Portfolio of Mayank Verma – Data & AI enthusiast, dashboard developer, and aspiring data analyst showcasing projects, skills, and experience." />
+    <meta name="keywords" content="Mayank Verma, data analyst, data science, dashboards, Power BI, Python, portfolio" />
+    <meta property="og:title" content="**Mayank Verma — Full‑Stack Aspirant**" />
+    <meta property="og:description" content="Data & AI projects, dashboards, certificates, and experience." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="doodle.png" />
+    <meta property="og:url" content="https://immayank.me" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+    <a class="skip-link" href="#about">Skip to main content</a>
+
     <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loading-text"></div>
+    <div class="loading-screen" aria-hidden="true">
+        <div class="loading-text">MAYANK VERMA</div>
     </div>
 
     <!-- Main Content -->
     <div class="main-content hidden">
         <!-- Navigation -->
-        <nav class="nav">
+        <nav class="nav" aria-label="Primary">
             <div class="nav-content">
-                <a href="#" class="logo" onclick="window.location.reload(); return false;">MAYANK</a>
+                <a href="#home" class="logo">MAYANK VERMA</a>
+
+                <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="nav-drawer">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <ul class="nav-links" id="nav-drawer">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Portfolio</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                </ul>
             </div>
         </nav>
 
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="video-background">
-                <div class="video-overlay"></div>
-                <video autoplay muted loop playsinline id="heroVideo" preload="auto" poster="bg-placeholder.jpg">
-                    <source src="https://res.cloudinary.com/dkjijdi7x/video/upload/v1745765100/srac4u6ycb5xiova9lcl.mp4" type="video/mp4">
-                </video>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-left reveal">
+                    <p class="eyebrow">Hello, It's Me</p>
+                    <h1 class="hero-name" id="hero-title">MAYANK VERMA</h1>
+                    <h2 class="hero-role">And I'm a <span class="typed-text" aria-live="polite"></span><span
+                            class="caret" aria-hidden="true">|</span></h2>
+                    <p class="hero-desc">
+                        Crafting clean, responsive interfaces and reliable back ends—turning ideas into working products
+                        with modern web stacks.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="resume.pdf" download class="btn btn-neon">Download CV</a>
+                        <a href="#projects" class="btn btn-outline">View My Work</a>
+                    </div>
+                    <div class="hero-social" aria-label="Social links">
+                        <a href="https://github.com/im-mayankverma" target="_blank" rel="noreferrer" class="social-icon"
+                            aria-label="GitHub">
+                            <!-- GitHub Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3 m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61 c3.14-.35 6.44-1.54 6.44-7 A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1 S18.73.65 16 2.48 a13.38 13.38 0 0 0-7 0 C6.27.65 5.09 1 5.09 1 A5.07 5.07 0 0 0 5 4.77 a5.44 5.44 0 0 0-1.5 3.78 c0 5.42 3.3 6.61 6.44 7 A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/im-mayankverma" target="_blank" rel="noreferrer"
+                            class="social-icon" aria-label="LinkedIn">
+                            <!-- LinkedIn Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7 a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7 a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right reveal" aria-hidden="true">
+                    <div class="hex">
+                        <img src="doodle.png" alt="Portrait of Mayank Verma" loading="lazy" decoding="async">
+                    </div>
+                </div>
             </div>
-            <div class="hero-content">
-                <div class="hero-text-container">
-                    <h2 class="hero-text">
-                        <span></span>
-                        <span class="cursor"></span>
-                    </h2>
-                </div>
-                <p class="hero-subtext">Unlocking the Power of Data and Artificial Intelligence.</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="primary-btn">View My Work</a>
-                    <a href="mailto:mkverma7287@gmail.com" class="secondary-btn">Contact Me</a>
-                </div>
-                <div class="hero-social">
-                    <a href="https://github.com/im-mayankverma" target="_blank" class="social-icon" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    </a>
-                    <a href="https://linkedin.com/in/im-mayankverma" target="_blank" class="social-icon" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
-                </div>
-            </div>
+
             <div class="scroll-btn">
-                <a href="#about">
+                <a href="#about" aria-label="Scroll to About section">
                     <span class="scroll-text">Scroll</span>
                     <span class="scroll-line"></span>
                 </a>
@@ -59,204 +107,378 @@
         </section>
 
         <!-- About Section -->
-        <section class="about" id="about">
-            <div class="section-content">
-                <h2 class="section-title">About Me</h2>
+        <section class="about" id="about" aria-labelledby="about-title">
+            <div class="section-content reveal">
+                <h2 class="section-title" id="about-title">About <span>Me</span></h2>
                 <div class="about-text">
-                    <p>Final-year B.Tech. CSE student with knowledge of Python, Data Science, MySQL, and basic skills in HTML, CSS, and Java. Gained practical experience through internships, enhancing my technical and problem-solving abilities. Skilled in using Microsoft and Google tools and eager to apply my knowledge to real-world challenges while learning and growing in a professional environment.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="skills" id="skills">
-            <div class="section-content">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Technical Experties</h3>
-                        <ul>
-                            <li>• Python</li>
-                            <li>• SQL</li>
-                            <li>• Data Analysis</li>
-                            <li>• Data Visualization</li>
-                            <li>• Predictive Modelling</li>
-                            <li>• Full Stack Development (using AI tools)</li>
-                            <li>• Designing</li>
-                            <!-- Add more -->
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Technologies</h3>
-                        <ul>
-                            <li>• Power BI</li>
-                            <li>• My SQL</li>
-                            <li>• Google Cloud Tools</li>
-                            <li>• Microsoft 365</li>
-                            <li>• Canva</li>
-                            <!-- Add more -->
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>General</h3>
-                        <ul>
-                            <li>• Data Interpretation</li>
-                            <li>• Communication Skills</li>
-                            <li>• Presentation Skills</li>
-                            <li>• Team Collaboration</li>
-                            <li>• Problem-Solving</li>
-                            <!-- Add more tools -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="experience" id="experience">
-            <div class="section-content">
-                <h2 class="section-title">Professional Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">June 2023 - Sep 2023</div>
-                        <div class="timeline-content">
-                            <h3>Internship Trainee</h3>
-                            <h4>Ducat, Gurgaon</h4>
-                            <ul>
-                                <li>• Completed an internship focused on Data Science and Machine Learning using Python, gaining hands-on experience in
-                                    analyzing and processing large datasets.</li>
-                                <li>• Developed and optimized SQL queries for data extraction and management, integrating data for analysis and insights.</li>
-                                <!-- Add more responsibilities -->
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Add more experiences -->
+                    <p>
+                        I’m a final-year B.Tech CSE student working toward full-stack development. I like building
+                        clean, responsive interfaces and wiring them to reliable back ends, using Python, SQL, and
+                        modern web stacks. I enjoy turning ideas into working products—thinking through user flows,
+                        shaping data models, and delivering features that feel polished. I’m comfortable collaborating,
+                        iterating quickly, and learning whatever tools are needed to get the job done.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section class="education" id="education">
-            <div class="section-content">
-                <h2 class="section-title">Education</h2>
-                <div class="education-items">
-                    <div class="education-item">
-                        <h3>Bachelor of Technology in Computer Science and Engineering</h3>
-                        <h4>OM Sterling Global University, Hisar</h4>
-                        <p>Session: 2022 - 2026</p>
+        <section class="education" id="education" aria-labelledby="edu-title">
+            <div class="section-content reveal">
+                <h2 class="section-title" id="edu-title">My <span>Education</span></h2>
+                <div class="edu-timeline">
+
+                    <div class="edu-item current">
+                        <div class="edu-header">
+                            <h3>Bachelor of Technology, Computer Science Engineering</h3>
+                            <span class="edu-institute">OM Sterling Global University</span>
+                        </div>
+                        <div class="edu-meta">
+                            <span class="edu-duration">Sep 2022 – Sep 2026</span>
+                            <span class="edu-location">Hisar, Haryana, India</span>
+                        </div>
+                        <p class="edu-desc">
+                            Coursework in computer science engineering with focus on software fundamentals, programming,
+                            and applied technologies.
+                        </p>
                     </div>
-                    <div class="education-item">
-                        <h3>Senior Secondary (PCM)</h3>
-                        <h4>KL Arya DAV Public School, Hisar</h4>
-                        <p>Percentage: 72.6%</p>
-                        <p>Year of Completion: 2022</p>
+
+                    <div class="edu-item">
+                        <div class="edu-header">
+                            <h3>Class XII (PCM)</h3>
+                            <span class="edu-institute">KL Arya DAV Public School</span>
+                        </div>
+                        <div class="edu-meta">
+                            <span class="edu-duration">Mar 2021 – Mar 2022</span>
+                            <span class="edu-location">Hisar, Haryana, India</span>
+                        </div>
+                        <p class="edu-desc">
+                            Grade: 72.6% — Physics, Chemistry, Mathematics; strengthened analytical and quantitative
+                            skills.
+                        </p>
                     </div>
-                    <div class="education-item">
-                        <h3>High School (10th Class)</h3>
-                        <h4>KL Arya DAV Public School, Hisar</h4>
-                        <p>Percentage: 82.6%</p>
-                        <p>Year of Completion: 2020</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills" aria-labelledby="skills-title">
+            <div class="section-content reveal">
+                <h2 class="section-title" id="skills-title">My <span>Skills</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Expertise</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>Data Analysis</li>
+                            <li>Data Visualization</li>
+                            <li>Predictive Modelling</li>
+                            <li>Full Stack Development (with AI tools)</li>
+                            <li>Designing</li>
+                        </ul>
                     </div>
-                    <!-- Add more education -->
+                    <div class="skill-category">
+                        <h3>Tools &amp; Technologies</h3>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>Google Cloud Tools</li>
+                            <li>Microsoft 365</li>
+                            <li>Canva</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>General</h3>
+                        <ul>
+                            <li>Data Interpretation</li>
+                            <li>Communication Skills</li>
+                            <li>Presentation Skills</li>
+                            <li>Team Collaboration</li>
+                            <li>Problem-Solving</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section class="projects" id="projects">
-            <div class="section-content">
-                <h2 class="section-title">Featured Projects</h2>
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+            <div class="section-content reveal">
+                <h2 class="section-title" id="projects-title">Featured <span>Projects</span></h2>
                 <div class="projects-grid">
                     <div class="project-item">
-                        <h3>E-Commerce-Sales-and-Customer-Dashboard</h3>
-                        <p>Developed a pure Python web application that accepts CSV files from users and provides comprehensive sales and customer analysis. The dashboard presents insights through interactive visualizations and easy-to-navigate web pages to enhance decision-making.</p>
+                        <div class="project-thumb">
+                            <img src="proj-ecommerce.png" alt="E-Commerce Sales & Customer Dashboard preview"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <h3>E-Commerce Sales &amp; Customer Dashboard</h3>
+                        <p>
+                            Python web application that ingests CSVs and produces interactive sales and customer
+                            analysis dashboards.
+                            Highlights cohort, RFM, and KPI tracking.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Plotly</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">View Project</a>
-                            <a href="https://github.com/im-mayankverma/E-Commerce-Sales-and-Customer-Dashboard" target="_blank">GitHub</a>
+                            <a href="https://your-live-demo.com/ecommerce" target="_blank" class="project-cta primary"
+                                rel="noreferrer">
+                                <span>View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M13 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/im-mayankverma/E-Commerce-Sales-and-Customer-Dashboard"
+                                target="_blank" class="project-cta secondary" rel="noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3 m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61 c3.14-.35 6.44-1.54 6.44-7 A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1 S18.73.65 16 2.48 a13.38 13.38 0 0 0-7 0 C6.27.65 5.09 1 5.09 1 A5.07 5.07 0 0 0 5 4.77 a5.44 5.44 0 0 0-1.5 3.78 c0 5.42 3.3 6.61 6.44 7 A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
                         </div>
                     </div>
+
                     <div class="project-item">
-                        <h3>HR-attrition-Dashboard</h3>
-                        <p>Designed an Excel-based dashboard to analyze employee attrition data, providing key performance indicators (KPIs) and actionable insights. Utilized advanced Excel features like pivot tables, charts, and formulas to create an interactive and user-friendly interface for HR decision-making.</p>
+                        <div class="project-thumb">
+                            <img src="proj-hr.png" alt="HR Attrition Dashboard preview" loading="lazy" decoding="async">
+                        </div>
+                        <h3>HR Attrition Dashboard</h3>
+                        <p>
+                            Excel-based dashboard to analyze attrition with KPIs and drilldowns; leverages Power Query,
+                            pivots, and DAX-like measures.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">View Project</a>
-                            <a href="https://github.com/im-mayankverma/HR-attrition-dashboard" target="_blank">GitHub</a>
+                            <a href="https://your-live-demo.com/hr-attrition" target="_blank"
+                                class="project-cta primary" rel="noreferrer">
+                                <span>View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M13 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/im-mayankverma/HR-attrition-dashboard" target="_blank"
+                                class="project-cta secondary" rel="noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3 m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61 c3.14-.35 6.44-1.54 6.44-7 A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1 S18.73.65 16 2.48 a13.38 13.38 0 0 0-7 0 C6.27.65 5.09 1 5.09 1 A5.07 5.07 0 0 0 5 4.77 a5.44 5.44 0 0 0-1.5 3.78 c0 5.42 3.3 6.61 6.44 7 A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
                         </div>
                     </div>
+
                     <div class="project-item">
+                        <div class="project-thumb">
+                            <img src="proj-ecommerce-full.png" alt="Full Stack E-Commerce Website preview"
+                                loading="lazy" decoding="async">
+                        </div>
                         <h3>Full Stack E-Commerce Website</h3>
-                        <p>Project under development!</p>
+                        <p>Project under development. Building product catalog, cart, checkout, and admin dashboards.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
                     </div>
-                    <!-- Add more projects -->
                 </div>
             </div>
         </section>
 
-        <!-- Certifications Section -->
-        <section class="certifications" id="certifications">
-            <div class="section-content">
-                <h2 class="section-title">Certifications</h2>
+        <!-- Certificates Section -->
+        <section class="certificates" id="certificates" aria-labelledby="cert-title">
+            <div class="section-content reveal">
+                <h2 class="section-title" id="cert-title">My <span>Certificates</span></h2>
                 <div class="cert-grid">
-                    <div class="cert-item">
+
+                    <div class="cert-card">
+                        <div class="cert-thumb">
+                            <img src="https://ik.imagekit.io/immayankverma/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_vBLaEdHpouBChJNk2_1746867251378_completion_certificate.png?updatedAt=1765515256832"
+                                alt="Deloitte Data Analytics Job Simulation certificate thumbnail" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <h3>Data Analytics Job Simulation</h3>
+                        <p class="cert-issuer">Deloitte (Forage)</p>
+                        <p class="cert-date">Issued: May 2025</p>
+                        <p class="cert-desc">
+                            Completed practical tasks in data analysis and forensic technology during Deloitte’s Data
+                            Analytics Job Simulation.
+                        </p>
+                        <a class="cert-btn"
+                            href="https://ik.imagekit.io/immayankverma/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_vBLaEdHpouBChJNk2_1746867251378_completion_certificate.png?updatedAt=1765515256832"
+                            target="_blank" rel="noreferrer">View Certificate</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-thumb">
+                            <img src="https://ik.imagekit.io/immayankverma/Python%20Certificate.jpg"
+                                alt="Programming with Python certificate thumbnail from Hartron/NCVET" loading="lazy"
+                                decoding="async">
+                        </div>
                         <h3>Programming with Python</h3>
-                        <p>Haryana State Electronics Development Corporation (HARTRON)</p>
-                        <p>Issued Jan 2024</p>
-                        <a href="https://res.cloudinary.com/dkjijdi7x/image/upload/v1745769003/Python_Certificate_m824ds.jpg" target="_blank">View Certificate</a>
+                        <p class="cert-issuer">Haryana State Electronics Development Corporation (NCVET)</p>
+                        <p class="cert-date">Issued: Apr 2024</p>
+                        <p class="cert-desc">
+                            Completed a 12-week, Level 4 “Programming with Python” program at Hartron Skill Centre,
+                            Hisar, earning an A grade (72/100).
+                        </p>
+                        <a class="cert-btn" href="https://ik.imagekit.io/immayankverma/Python%20Certificate.jpg"
+                            target="_blank" rel="noreferrer">View Certificate</a>
                     </div>
-                    <div class="cert-item">
+
+                    <div class="cert-card">
+                        <div class="cert-thumb">
+                            <img src="https://ik.imagekit.io/immayankverma/Microsoft%20Excel%20Essential%20Training%20Certificate%20.png"
+                                alt="LinkedIn Learning Excel Essential Training certificate thumbnail" loading="lazy"
+                                decoding="async">
+                        </div>
                         <h3>Excel Essential Training (Microsoft 365)</h3>
-                        <p>LinkedIn Learning</p>
-                        <p>Issued August 2024</p>
-                        <a href="https://www.linkedin.com/learning/certificates/34e2b3acc89ff838d1a5b74a110cddecec5552199917e19c9e6864ea316a0ccf" target="_blank">View Certificate</a>
+                        <p class="cert-issuer">LinkedIn Learning</p>
+                        <p class="cert-date">Issued: Aug 2024</p>
+                        <p class="cert-desc">
+                            Completed LinkedIn Learning’s Excel Essential Training (Microsoft 365), covering core
+                            spreadsheet skills,
+                            formulas, data organization, and productivity best practices.
+                        </p>
+                        <a class="cert-btn"
+                            href="https://ik.imagekit.io/immayankverma/Microsoft%20Excel%20Essential%20Training%20Certificate%20.png"
+                            target="_blank" rel="noreferrer">View Certificate</a>
                     </div>
-                    <div class="cert-item">
-                        <h3>Power BI Essential Training</h3>
-                        <p>LinkedIn Learning</p>
-                        <p>Issued August 2024</p>
-                        <a href="https://www.linkedin.com/learning/certificates/433c4319921053b24951a58b49fd7bc1270dd268e5d81c606933904187b00b55" target="_blank">View Certificate</a>
+
+                    <div class="cert-card">
+                        <div class="cert-thumb">
+                            <img src="https://ik.imagekit.io/immayankverma/Shankara%20Global%20Hackathon%20-%20Participation%20Certificate%20.png"
+                                alt="Shankara Global Hackathon participation certificate thumbnail" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <h3>Shankara Global Hackathon</h3>
+                        <p class="cert-issuer">Shankara Group of Institutions</p>
+                        <p class="cert-date">Issued: Mar 2025</p>
+                        <p class="cert-desc">
+                            Certificate of participation for completing the 24-hour Shankara Global Hackathon
+                            (Innovation & Startup Competition) at Shankara Campus, Jaipur.
+                        </p>
+                        <a class="cert-btn"
+                            href="https://ik.imagekit.io/immayankverma/Shankara%20Global%20Hackathon%20-%20Participation%20Certificate%20.png"
+                            target="_blank" rel="noreferrer">View Certificate</a>
                     </div>
-                    <div class="cert-item">
-                        <h3>Certificate of Participation</h3>
-                        <p>Shankara Group of Institutions, Jaipur</p>
-                        <p>Issued Mar 2025</p>
-                        <a href="https://res.cloudinary.com/dkjijdi7x/image/upload/v1745769119/Shankara_Global_Hackathon_-_Participation_Certificate__page-0001_ufyvvh.jpg" target="_blank">View Certificate</a>
+
+                    <div class="cert-card">
+                        <div class="cert-thumb">
+                            <img src="https://ik.imagekit.io/immayankverma/German%20A1%20Level%20Certification%20GJU.png"
+                                alt="Certificate of Proficiency in German Language thumbnail" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <h3>Certificate of Proficiency in German Language</h3>
+                        <p class="cert-issuer">Guru Jambheshwar University of Science & Technology, Hisar</p>
+                        <p class="cert-date">Issued: Nov 2025</p>
+                        <p class="cert-desc">
+                            Completed the short-term certificate course in German language (Department of English and
+                            Foreign Languages), awarded Grade B with 116/150.
+                        </p>
+                        <a class="cert-btn"
+                            href="https://ik.imagekit.io/immayankverma/German%20A1%20Level%20Certification%20GJU.png"
+                            target="_blank" rel="noreferrer">View Certificate</a>
                     </div>
-                    <div class="cert-item">
-                        <h3>Prompt Design in Vertex AI Skill Badge</h3>
-                        <p>Google</p>
-                        <p>Issued April 2025</p>
-                        <a href="https://www.credly.com/badges/c4a39079-a158-486c-b69b-8954a47825b6" target="_blank">View Certificate</a>
-                    </div>
-                    <div class="cert-item">
-                        <h3>Develop GenAI Apps with Gemini and Streamlit Skill Badge</h3>
-                        <p>Google</p>
-                        <p>Issued April 2025</p>
-                        <a href="https://www.credly.com/badges/9c4f80fe-2263-45f2-8658-224c7a1b83f0" target="_blank">View Certificate</a>
-                    </div>
-                    <div class="cert-item">
-                        <h3>Build Real World AI Applications with Gemini and Imagen Skill Badge</h3>
-                        <p>Google</p>
-                        <p>Issued April 2025</p>
-                        <a href="https://www.credly.com/badges/a5e4f4ac-d542-4dc0-82fe-3b60f93a5812" target="_blank">View Certificate</a>
-                    </div>
-                    <!-- Add more certifications -->
+
                 </div>
             </div>
         </section>
-        
+
+        <!-- Experience Section -->
+        <section class="experience" id="experience" aria-labelledby="exp-title">
+            <div class="section-content reveal">
+                <h2 class="section-title" id="exp-title">Work <span>Experience</span></h2>
+                <div class="exp-timeline">
+
+                    <div class="exp-item current">
+                        <div class="exp-header">
+                            <h3>Founder</h3>
+                            <span class="exp-company">Techwarts · Self-employed</span>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-duration">Sep 2025 – Present (4 mos)</span>
+                            <span class="exp-location">Hisar, Haryana, India · Hybrid</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li>Provide fast, reliable, customer-focused tech support across computer servicing, printer
+                                setup, network troubleshooting, and cybersecurity.</li>
+                            <li>Support clients in Hisar and beyond with responsive, high-quality technical assistance.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <h3>IT Technician</h3>
+                            <span class="exp-company">Computer Express · Full-time</span>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-duration">Jun 2025 – Aug 2025 (3 mos)</span>
+                            <span class="exp-location">Gurugram, Haryana, India · On-site</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li>Delivered system support plus hardware/software troubleshooting and maintenance.</li>
+                            <li>Assisted clients to ensure uptime, smooth operations, and dependable service quality.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <h3>Internship Trainee</h3>
+                            <span class="exp-company">Ducat India · Trainee</span>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-duration">Jun 2024 – Aug 2024 (3 mos)</span>
+                            <span class="exp-location">Gurugram, Haryana, India · On-site</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li>Completed a data science internship focused on Python (course dates: Jun–Sep 2024),
+                                covering data cleaning, analysis, and visualization.</li>
+                            <li>Built mini-projects using Python/pandas to process and summarize datasets; produced
+                                clear insights and presentations.</li>
+                            <li>Earned a certificate of completion for Data Science using Python.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Footer Section -->
-        <footer class="footer">
+        <footer class="footer" aria-label="Footer">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2025 Mayank. All rights reserved.</p>
+                    <p>&copy; 2025 Mayank Verma. All rights reserved.</p>
                 </div>
                 <div class="footer-right">
-                    <!-- Rounded Rectangle Download Button -->
-                    <a href="resume.pdf" download class="download-btn">
-                        Resume
-                    </a>
-                    <a href="https://github.com/im-mayankverma" target="_blank" class="social-link">GitHub</a>
-                    <a href="https://linkedin.com/in/im-mayankverma" target="_blank" class="social-link">LinkedIn</a>
+                    <a href="resume.pdf" download class="download-btn">Resume</a>
+                    <a href="https://github.com/im-mayankverma" target="_blank" rel="noreferrer"
+                        class="social-link">GitHub</a>
+                    <a href="https://linkedin.com/in/im-mayankverma" target="_blank" rel="noreferrer"
+                        class="social-link">LinkedIn</a>
                     <a href="mailto:mkverma7287@gmail.com" class="social-link">Hire Me!</a>
                 </div>
             </div>
@@ -265,4 +487,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
