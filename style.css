@@ -370,6 +370,15 @@ img { max-width: 100%; display: block; }
     100% { transform: translateY(120%); }
 }
 
+/* adjust scroll button on smaller screens */
+@media (max-width: 880px) {
+  .scroll-btn { bottom: 4rem; }
+}
+
+@media (max-width: 640px) {
+  .scroll-btn { display: none; }
+}
+
 /* Sections */
 section { padding: 8rem 5%; }
 .section-content {
@@ -934,3 +943,4 @@ section { padding: 8rem 5%; }
     .hero-container { gap: 3rem; }
     .btn { width: 100%; text-align: center; }
 }
+
