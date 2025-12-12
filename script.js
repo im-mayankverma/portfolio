@@ -1,116 +1,170 @@
-// Typing Animation and Loading Screen
+// Typing Animation, Loading Screen, Scroll, Nav
 document.addEventListener('DOMContentLoaded', () => {
-    // Loading Screen Animation
     const loadingScreen = document.querySelector('.loading-screen');
     const loadingText = document.querySelector('.loading-text');
     const mainContent = document.querySelector('.main-content');
-    const text = "MAYANK";
-    let charIndex = 0;
 
-    function typeLoadingText() {
-        if (charIndex < text.length) {
-            loadingText.textContent += text.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeLoadingText, 200);
+    // Loading screen typing
+    const loadText = "MAYANK VERMA";
+    let li = 0;
+    loadingText.textContent = '';
+
+    function typeLoad() {
+        if (li < loadText.length) {
+            loadingText.textContent += loadText.charAt(li);
+            li++;
+            setTimeout(typeLoad, 120);
         } else {
             setTimeout(() => {
                 loadingScreen.style.opacity = '0';
                 mainContent.classList.remove('hidden');
                 setTimeout(() => {
-                    loadingScreen.classList.add('remove');
-                    // Start hero text animation after loading screen is removed
-                    startHeroAnimation();
+                    loadingScreen.style.display = 'none';
+                    startHeroTyping();
+                    initScrollAnimations();
                 }, 500);
-            }, 3000);
+            }, 900);
         }
     }
+    typeLoad();
 
-    // Hero Text Animation - Updated with more professional titles
-    function startHeroAnimation() {
-        const heroTextContainer = document.querySelector('.hero-text');
-        const words = ['Final Year Undergraduate', 'Aspiring Data Analyst', 'Tech Enthusiast'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+    // Hero typing effect
+    function startHeroTyping() {
+        const typedEl = document.querySelector('.typed-text');
+        if (!typedEl) return;
 
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                // Remove character
-                charIndex--;
+        const words = [
+            'Tech Enthusiast',
+            'Full-Stack Developer',
+            'Web & Data Explorer'
+        ];
+
+        let wIndex = 0;
+        let cIndex = 0;
+        let deleting = false;
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const typeDelay = prefersReduced ? 0 : 120;
+        const deleteDelay = prefersReduced ? 0 : 60;
+        const holdDelay = prefersReduced ? 800 : 1600;
+
+        function tick() {
+            const current = words[wIndex];
+            if (!deleting) {
+                cIndex++;
+                typedEl.textContent = current.substring(0, cIndex);
             } else {
-                // Add character
-                charIndex++;
+                cIndex--;
+                typedEl.textContent = current.substring(0, cIndex);
             }
 
-            // Create text with cursor
-            heroTextContainer.innerHTML = `
-                <span>${currentWord.substring(0, charIndex)}</span>
-                <span class="cursor"></span>
-            `;
+            let delay = deleting ? deleteDelay : typeDelay;
 
-            // Typing speed
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            // If word is complete
-            if (!isDeleting && charIndex === currentWord.length) {
-                // Pause at end of word
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                // Move to next word
-                wordIndex = (wordIndex + 1) % words.length;
-                // Pause before typing next word
-                typeSpeed = 500;
+            if (!deleting && cIndex === current.length) {
+                delay = holdDelay;
+                deleting = true;
+            } else if (deleting && cIndex === 0) {
+                deleting = false;
+                wIndex = (wIndex + 1) % words.length;
+                delay = 500;
             }
 
-            setTimeout(typeEffect, typeSpeed);
+            setTimeout(tick, delay);
         }
 
-        // Start the typing effect
-        typeEffect();
+        tick();
     }
 
-    // Start the loading animation
-    typeLoadingText();
-    
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
+    // Hamburger Menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', String(!expanded));
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu on nav link click (mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (hamburger && navLinks) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     });
-});
 
-// Video Background
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('heroVideo');
-    
-    // Set initial playback speed
-    video.playbackRate = 1.0;
+    // Smooth scroll with offset for fixed nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href === '') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const navHeight = document.querySelector('.nav')?.offsetHeight || 0;
+                const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+                window.scrollTo({ top: targetTop, behavior: 'smooth' });
+            }
+        });
+    });
 
-    // Ensure video plays smoothly after tab becomes active
-    document.addEventListener('visibilitychange', () => {
-        if (!document.hidden) {
-            // Tab is active, reset playback rate
-            video.play().catch(() => {});
-            video.playbackRate = 1.0;
+    // Navbar scroll effect
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+        if (!nav) return;
+        if (window.scrollY > 100) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
         }
     });
 
-    // Ensure video plays on load
-    video.play().catch((error) => {
-        console.error("Video autoplay failed:", error);
-    });
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksAll = document.querySelectorAll('.nav-link');
+
+    function highlightNav() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 220) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinksAll.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', highlightNav);
+
+    // Scroll reveal animations
+    function initScrollAnimations() {
+        const reveals = document.querySelectorAll('.reveal');
+
+        if (!('IntersectionObserver' in window)) {
+            reveals.forEach(el => el.classList.add('active'));
+            return;
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+    }
 });
